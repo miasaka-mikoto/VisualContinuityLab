@@ -1,0 +1,5 @@
+# Runtime dependencies for the local analysis engine.
+numpy>=1.26,<3
+Pillow>=10.2,<13
+opencv-python-headless>=4.9,<5
+
