@@ -1,0 +1,1167 @@
+{
+  "schema_version": "1.0",
+  "sequence_id": "mock-continuity-sequence-001",
+  "name": "Visual Continuity Lab deterministic demo",
+  "source": "procedural-local",
+  "width": 640,
+  "height": 360,
+  "fps": 12.0,
+  "frame_count": 24,
+  "master_reference": "frames/frame_0001.png",
+  "intentional_events": {
+    "color_drift": {
+      "frames": [
+        8,
+        9,
+        10
+      ],
+      "description": "Costume shifts from blue to magenta."
+    },
+    "scale_jump": {
+      "frames": [
+        13
+      ],
+      "description": "Character scale is 1.34x for one frame."
+    },
+    "brightness_flicker": {
+      "frames": [
+        16,
+        18
+      ],
+      "description": "Alternating bright and dark exposure."
+    },
+    "background_change": {
+      "frames": [
+        20,
+        21,
+        22
+      ],
+      "description": "Ground and sky palette changes."
+    }
+  },
+  "demo_markers": {
+    "color_drift": [
+      8,
+      9,
+      10
+    ],
+    "scale_jump": [
+      13
+    ],
+    "brightness_flicker": [
+      16,
+      18
+    ],
+    "background_change": [
+      20,
+      21,
+      22
+    ]
+  },
+  "frames": [
+    {
+      "frame_id": "f0001",
+      "frame_number": 1,
+      "timestamp": 0.0,
+      "file": "frames/frame_0001.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          280,
+          103,
+          372,
+          290
+        ],
+        "face": [
+          296,
+          121,
+          355,
+          180
+        ],
+        "hair": [
+          286,
+          109,
+          366,
+          187
+        ],
+        "costume": [
+          288,
+          173,
+          364,
+          242
+        ],
+        "center": [
+          326.17,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0002",
+      "frame_number": 2,
+      "timestamp": 0.083333,
+      "file": "frames/frame_0002.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          285,
+          103,
+          377,
+          290
+        ],
+        "face": [
+          302,
+          121,
+          360,
+          180
+        ],
+        "hair": [
+          291,
+          109,
+          371,
+          187
+        ],
+        "costume": [
+          293,
+          173,
+          369,
+          242
+        ],
+        "center": [
+          331.6,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0003",
+      "frame_number": 3,
+      "timestamp": 0.166667,
+      "file": "frames/frame_0003.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          289,
+          103,
+          381,
+          290
+        ],
+        "face": [
+          306,
+          121,
+          364,
+          180
+        ],
+        "hair": [
+          295,
+          109,
+          375,
+          187
+        ],
+        "costume": [
+          297,
+          173,
+          373,
+          242
+        ],
+        "center": [
+          335.61,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0004",
+      "frame_number": 4,
+      "timestamp": 0.25,
+      "file": "frames/frame_0004.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          291,
+          103,
+          383,
+          290
+        ],
+        "face": [
+          308,
+          121,
+          366,
+          180
+        ],
+        "hair": [
+          297,
+          109,
+          377,
+          187
+        ],
+        "costume": [
+          299,
+          173,
+          375,
+          242
+        ],
+        "center": [
+          337.74,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0005",
+      "frame_number": 5,
+      "timestamp": 0.333333,
+      "file": "frames/frame_0005.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          291,
+          103,
+          383,
+          290
+        ],
+        "face": [
+          308,
+          121,
+          366,
+          180
+        ],
+        "hair": [
+          297,
+          109,
+          377,
+          187
+        ],
+        "costume": [
+          299,
+          173,
+          375,
+          242
+        ],
+        "center": [
+          337.71,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0006",
+      "frame_number": 6,
+      "timestamp": 0.416667,
+      "file": "frames/frame_0006.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          289,
+          103,
+          381,
+          290
+        ],
+        "face": [
+          306,
+          121,
+          364,
+          180
+        ],
+        "hair": [
+          295,
+          109,
+          375,
+          187
+        ],
+        "costume": [
+          297,
+          173,
+          373,
+          242
+        ],
+        "center": [
+          335.54,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0007",
+      "frame_number": 7,
+      "timestamp": 0.5,
+      "file": "frames/frame_0007.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          285,
+          103,
+          377,
+          290
+        ],
+        "face": [
+          302,
+          121,
+          360,
+          180
+        ],
+        "hair": [
+          291,
+          109,
+          371,
+          187
+        ],
+        "costume": [
+          293,
+          173,
+          369,
+          242
+        ],
+        "center": [
+          331.48,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0008",
+      "frame_number": 8,
+      "timestamp": 0.583333,
+      "file": "frames/frame_0008.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          280,
+          103,
+          371,
+          290
+        ],
+        "face": [
+          296,
+          121,
+          355,
+          180
+        ],
+        "hair": [
+          285,
+          109,
+          366,
+          187
+        ],
+        "costume": [
+          288,
+          173,
+          364,
+          242
+        ],
+        "center": [
+          326.03,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": true,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0009",
+      "frame_number": 9,
+      "timestamp": 0.666667,
+      "file": "frames/frame_0009.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          273,
+          103,
+          365,
+          290
+        ],
+        "face": [
+          290,
+          121,
+          349,
+          180
+        ],
+        "hair": [
+          279,
+          109,
+          359,
+          187
+        ],
+        "costume": [
+          281,
+          173,
+          357,
+          242
+        ],
+        "center": [
+          319.85,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": true,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0010",
+      "frame_number": 10,
+      "timestamp": 0.75,
+      "file": "frames/frame_0010.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          267,
+          103,
+          359,
+          290
+        ],
+        "face": [
+          284,
+          121,
+          342,
+          180
+        ],
+        "hair": [
+          273,
+          109,
+          353,
+          187
+        ],
+        "costume": [
+          275,
+          173,
+          351,
+          242
+        ],
+        "center": [
+          313.69,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": true,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0011",
+      "frame_number": 11,
+      "timestamp": 0.833333,
+      "file": "frames/frame_0011.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          262,
+          103,
+          354,
+          290
+        ],
+        "face": [
+          279,
+          121,
+          337,
+          180
+        ],
+        "hair": [
+          268,
+          109,
+          348,
+          187
+        ],
+        "costume": [
+          270,
+          173,
+          346,
+          242
+        ],
+        "center": [
+          308.29,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0012",
+      "frame_number": 12,
+      "timestamp": 0.916667,
+      "file": "frames/frame_0012.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          258,
+          103,
+          350,
+          290
+        ],
+        "face": [
+          275,
+          121,
+          333,
+          180
+        ],
+        "hair": [
+          264,
+          109,
+          344,
+          187
+        ],
+        "costume": [
+          266,
+          173,
+          342,
+          242
+        ],
+        "center": [
+          304.31,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0013",
+      "frame_number": 13,
+      "timestamp": 1.0,
+      "file": "frames/frame_0013.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          240,
+          40,
+          363,
+          290
+        ],
+        "face": [
+          263,
+          65,
+          341,
+          143
+        ],
+        "hair": [
+          248,
+          48,
+          355,
+          153
+        ],
+        "costume": [
+          251,
+          134,
+          353,
+          227
+        ],
+        "center": [
+          302.24,
+          195.19
+        ],
+        "scale": 1.34
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": true,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0014",
+      "frame_number": 14,
+      "timestamp": 1.083333,
+      "file": "frames/frame_0014.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          256,
+          103,
+          348,
+          290
+        ],
+        "face": [
+          273,
+          121,
+          331,
+          180
+        ],
+        "hair": [
+          262,
+          109,
+          342,
+          187
+        ],
+        "costume": [
+          264,
+          173,
+          340,
+          242
+        ],
+        "center": [
+          302.32,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0015",
+      "frame_number": 15,
+      "timestamp": 1.166667,
+      "file": "frames/frame_0015.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          258,
+          103,
+          350,
+          290
+        ],
+        "face": [
+          275,
+          121,
+          333,
+          180
+        ],
+        "hair": [
+          264,
+          109,
+          344,
+          187
+        ],
+        "costume": [
+          266,
+          173,
+          342,
+          242
+        ],
+        "center": [
+          304.54,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0016",
+      "frame_number": 16,
+      "timestamp": 1.25,
+      "file": "frames/frame_0016.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          262,
+          103,
+          354,
+          290
+        ],
+        "face": [
+          279,
+          121,
+          337,
+          180
+        ],
+        "hair": [
+          268,
+          109,
+          348,
+          187
+        ],
+        "costume": [
+          270,
+          173,
+          346,
+          242
+        ],
+        "center": [
+          308.64,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": true,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0017",
+      "frame_number": 17,
+      "timestamp": 1.333333,
+      "file": "frames/frame_0017.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          268,
+          103,
+          360,
+          290
+        ],
+        "face": [
+          284,
+          121,
+          343,
+          180
+        ],
+        "hair": [
+          273,
+          109,
+          354,
+          187
+        ],
+        "costume": [
+          276,
+          173,
+          352,
+          242
+        ],
+        "center": [
+          314.11,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0018",
+      "frame_number": 18,
+      "timestamp": 1.416667,
+      "file": "frames/frame_0018.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          274,
+          103,
+          366,
+          290
+        ],
+        "face": [
+          291,
+          121,
+          349,
+          180
+        ],
+        "hair": [
+          280,
+          109,
+          360,
+          187
+        ],
+        "costume": [
+          282,
+          173,
+          358,
+          242
+        ],
+        "center": [
+          320.3,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": true,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0019",
+      "frame_number": 19,
+      "timestamp": 1.5,
+      "file": "frames/frame_0019.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          280,
+          103,
+          372,
+          290
+        ],
+        "face": [
+          297,
+          121,
+          355,
+          180
+        ],
+        "hair": [
+          286,
+          109,
+          366,
+          187
+        ],
+        "costume": [
+          288,
+          173,
+          364,
+          242
+        ],
+        "center": [
+          326.46,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0020",
+      "frame_number": 20,
+      "timestamp": 1.583333,
+      "file": "frames/frame_0020.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          285,
+          103,
+          377,
+          290
+        ],
+        "face": [
+          302,
+          121,
+          361,
+          180
+        ],
+        "hair": [
+          291,
+          109,
+          371,
+          187
+        ],
+        "costume": [
+          293,
+          173,
+          369,
+          242
+        ],
+        "center": [
+          331.83,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": true
+      }
+    },
+    {
+      "frame_id": "f0021",
+      "frame_number": 21,
+      "timestamp": 1.666667,
+      "file": "frames/frame_0021.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          289,
+          103,
+          381,
+          290
+        ],
+        "face": [
+          306,
+          121,
+          365,
+          180
+        ],
+        "hair": [
+          295,
+          109,
+          375,
+          187
+        ],
+        "costume": [
+          297,
+          173,
+          373,
+          242
+        ],
+        "center": [
+          335.76,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": true
+      }
+    },
+    {
+      "frame_id": "f0022",
+      "frame_number": 22,
+      "timestamp": 1.75,
+      "file": "frames/frame_0022.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          291,
+          103,
+          383,
+          290
+        ],
+        "face": [
+          308,
+          121,
+          367,
+          180
+        ],
+        "hair": [
+          297,
+          109,
+          377,
+          187
+        ],
+        "costume": [
+          299,
+          173,
+          375,
+          242
+        ],
+        "center": [
+          337.79,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": true
+      }
+    },
+    {
+      "frame_id": "f0023",
+      "frame_number": 23,
+      "timestamp": 1.833333,
+      "file": "frames/frame_0023.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          291,
+          103,
+          383,
+          290
+        ],
+        "face": [
+          308,
+          121,
+          366,
+          180
+        ],
+        "hair": [
+          297,
+          109,
+          377,
+          187
+        ],
+        "costume": [
+          299,
+          173,
+          375,
+          242
+        ],
+        "center": [
+          337.66,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    },
+    {
+      "frame_id": "f0024",
+      "frame_number": 24,
+      "timestamp": 1.916667,
+      "file": "frames/frame_0024.png",
+      "shot": "demo-shot-001",
+      "character": "demo-character",
+      "status": "generated",
+      "roi": {
+        "character": [
+          289,
+          103,
+          381,
+          290
+        ],
+        "face": [
+          306,
+          121,
+          364,
+          180
+        ],
+        "hair": [
+          295,
+          109,
+          375,
+          187
+        ],
+        "costume": [
+          297,
+          173,
+          373,
+          242
+        ],
+        "center": [
+          335.38,
+          218.74
+        ],
+        "scale": 1.0
+      },
+      "markers": {
+        "color_drift": false,
+        "scale_jump": false,
+        "brightness_flicker": false,
+        "background_change": false
+      }
+    }
+  ]
+}
