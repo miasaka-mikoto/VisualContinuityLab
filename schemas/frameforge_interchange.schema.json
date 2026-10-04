@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://visual-continuity-lab.local/schemas/frameforge-interchange-1.0.json",
+  "title": "Visual Continuity Lab ↔ FrameForge interchange",
+  "description": "Versioned, source-independent exchange of shots, frames, and continuity results.",
+  "type": "object",
+  "required": ["schemaVersion", "projectId", "source", "shots"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "projectId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "exportedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "settings": {
+      "$ref": "#/$defs/settings"
+    },
+    "shots": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/shot"
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/issue"
+      }
+    },
+    "health": {
+      "anyOf": [
+        {"$ref": "#/$defs/health"},
+        {"type": "null"}
+      ]
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["application", "version"],
+      "properties": {
+        "application": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "file": {"type": "string"},
+        "sequenceId": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "adjacentThresholds": {"$ref": "#/$defs/thresholds"},
+        "masterThresholds": {"$ref": "#/$defs/thresholds"},
+        "sampleRate": {"type": "number", "exclusiveMinimum": 0},
+        "roi": {
+          "anyOf": [
+            {"$ref": "#/$defs/roi"},
+            {"type": "null"}
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "thresholds": {
+      "type": "object",
+      "properties": {
+        "low": {"type": "number", "minimum": 0},
+        "medium": {"type": "number", "minimum": 0},
+        "high": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "shot": {
+      "type": "object",
+      "required": ["shotId", "frames"],
+      "properties": {
+        "shotId": {"type": "string", "minLength": 1},
+        "name": {"type": "string"},
+        "frameRate": {"type": ["number", "null"], "minimum": 0},
+        "masterReferenceFrameId": {"type": ["string", "null"]},
+        "characters": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/character"}
+        },
+        "frames": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/frame"}
+        }
+      },
+      "additionalProperties": true
+    },
+    "character": {
+      "type": "object",
+      "required": ["characterId"],
+      "properties": {
+        "characterId": {"type": "string", "minLength": 1},
+        "name": {"type": "string"},
+        "roi": {"$ref": "#/$defs/roi"}
+      },
+      "additionalProperties": true
+    },
+    "roi": {
+      "type": "object",
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": {"type": "number", "minimum": 0, "maximum": 1},
+        "y": {"type": "number", "minimum": 0, "maximum": 1},
+        "width": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "height": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "locked": {"type": "boolean"},
+        "sourceWidth": {"type": "integer", "exclusiveMinimum": 0},
+        "sourceHeight": {"type": "integer", "exclusiveMinimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "frame": {
+      "type": "object",
+      "required": ["frameId", "frameNumber", "status"],
+      "properties": {
+        "frameId": {"type": "string", "minLength": 1},
+        "frameNumber": {"type": "integer", "minimum": 0},
+        "timestamp": {"type": ["number", "null"], "minimum": 0},
+        "path": {"type": ["string", "null"]},
+        "character": {"type": ["string", "null"]},
+        "shot": {"type": ["string", "null"]},
+        "status": {
+          "type": "string",
+          "enum": ["pending", "analyzed", "failed", "skipped", "labeled"]
+        },
+        "measurements": {"$ref": "#/$defs/measurements"},
+        "continuity": {"$ref": "#/$defs/continuity"},
+        "labels": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/label"}
+        },
+        "issueIds": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "measurements": {
+      "type": "object",
+      "properties": {
+        "imageWidth": {"type": ["integer", "null"], "minimum": 1},
+        "imageHeight": {"type": ["integer", "null"], "minimum": 1},
+        "brightness": {"type": ["number", "null"]},
+        "contrast": {"type": ["number", "null"], "minimum": 0},
+        "edgeDensity": {"type": ["number", "null"], "minimum": 0},
+        "perceptualHash": {"type": ["string", "null"]},
+        "featureCount": {"type": ["integer", "null"], "minimum": 0},
+        "flowMagnitude": {"type": ["number", "null"], "minimum": 0},
+        "colorDistribution": {
+          "type": ["array", "null"],
+          "items": {"type": "number"}
+        }
+      },
+      "additionalProperties": true
+    },
+    "continuity": {
+      "type": "object",
+      "properties": {
+        "adjacent": {"$ref": "#/$defs/comparison"},
+        "master": {"$ref": "#/$defs/comparison"},
+        "dimensions": {
+          "type": "object",
+          "additionalProperties": {"$ref": "#/$defs/comparison"}
+        }
+      },
+      "additionalProperties": true
+    },
+    "comparison": {
+      "type": ["object", "null"],
+      "properties": {
+        "overallDrift": {"type": "number", "minimum": 0},
+        "severity": {
+          "type": "string",
+          "enum": ["none", "low", "medium", "high", "unknown"]
+        },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": {"type": "number"}
+        },
+        "evidence": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/evidence"}
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["metric", "message"],
+      "properties": {
+        "metric": {"type": "string", "minLength": 1},
+        "value": {"type": ["number", "string", "boolean", "null"]},
+        "referenceValue": {"type": ["number", "string", "boolean", "null"]},
+        "threshold": {"type": ["number", "string", "null"]},
+        "message": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "issue": {
+      "type": "object",
+      "required": ["issueId", "type", "startFrame", "endFrame", "severity", "evidence"],
+      "properties": {
+        "issueId": {"type": "string", "minLength": 1},
+        "type": {"type": "string", "minLength": 1},
+        "startFrame": {"type": "integer", "minimum": 0},
+        "endFrame": {"type": "integer", "minimum": 0},
+        "severity": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/evidence"}
+        },
+        "notes": {"type": "string"},
+        "recommendedAction": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "label": {
+      "type": "object",
+      "required": ["label"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "enum": ["Good", "Bad Face", "Bad Hair", "Bad Costume", "Bad Pose", "Bad Background"]
+        },
+        "author": {"type": "string"},
+        "createdAt": {"type": "string", "format": "date-time"},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "health": {
+      "type": "object",
+      "properties": {
+        "identityStability": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "motionStability": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "colorStability": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "lightingStability": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "backgroundStability": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "overall": {"type": ["number", "null"], "minimum": 0, "maximum": 100}
+      },
+      "additionalProperties": true
+    },
+    "artifact": {
+      "type": "object",
+      "required": ["type", "path"],
+      "properties": {
+        "type": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "mimeType": {"type": "string"},
+        "sha256": {"type": "string"}
+      },
+      "additionalProperties": true
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "vcl-demo-001",
+  "exportedAt": "2026-10-04T00:00:00Z",
+  "source": {
+    "application": "Visual Continuity Lab",
+    "version": "0.1.0",
+    "sequenceId": "demo-sequence"
+  },
+  "shots": [
+    {
+      "shotId": "shot-001",
+      "name": "Synthetic continuity defects",
+      "frameRate": 12,
+      "masterReferenceFrameId": "frame-001",
+      "frames": [
+        {
+          "frameId": "frame-001",
+          "frameNumber": 1,
+          "timestamp": 0,
+          "path": "demo/frame_0001.png",
+          "status": "analyzed",
+          "measurements": {
+            "imageWidth": 640,
+            "imageHeight": 360,
+            "brightness": 0.48,
+            "contrast": 0.20,
+            "edgeDensity": 0.08,
+            "perceptualHash": "0000ffff0000ffff"
+          },
+          "continuity": {
+            "adjacent": null,
+            "master": {
+              "overallDrift": 0,
+              "severity": "none",
+              "evidence": []
+            }
+          },
+          "labels": [
+            {"label": "Good", "author": "demo"}
+          ],
+          "issueIds": []
+        },
+        {
+          "frameId": "frame-002",
+          "frameNumber": 2,
+          "timestamp": 0.083333,
+          "path": "demo/frame_0002.png",
+          "status": "analyzed",
+          "continuity": {
+            "adjacent": {
+              "overallDrift": 0.72,
+              "severity": "high",
+              "metrics": {"characterScale": 0.91, "brightness": 0.08},
+              "evidence": [
+                {
+                  "metric": "characterScale",
+                  "value": 1.31,
+                  "referenceValue": 1.0,
+                  "threshold": 0.2,
+                  "message": "Character scale jumped relative to the previous frame."
+                }
+              ]
+            },
+            "master": {
+              "overallDrift": 0.72,
+              "severity": "high",
+              "evidence": []
+            }
+          },
+          "issueIds": ["issue-scale-002"]
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "issueId": "issue-scale-002",
+      "type": "character_scale_jump",
+      "startFrame": 2,
+      "endFrame": 2,
+      "severity": "high",
+      "evidence": [
+        {
+          "metric": "characterScale",
+          "value": 1.31,
+          "referenceValue": 1.0,
+          "threshold": 0.2,
+          "message": "Character scale jumped relative to the previous frame."
+        }
+      ],
+      "notes": "Synthetic demo defect",
+      "recommendedAction": "Regenerate frame 2"
+    }
+  ],
+  "health": {
+    "identityStability": 78,
+    "motionStability": 64,
+    "colorStability": 88,
+    "lightingStability": 91,
+    "backgroundStability": 73,
+    "overall": 79
+  }
+}
